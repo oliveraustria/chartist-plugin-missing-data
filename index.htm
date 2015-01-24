@@ -12,28 +12,9 @@
         <div id="ct-chart"></div>
         
         
-        <source>
-
-            var chart = new Chartist.Line('#ct-chart', {
-                 labels: ['Week1', 'Week2', 'Week3', 'Week4', 'Week5', 'Week6'],
-                    series: [
-                        [1, 2, 3, 4, 5, 6],
-                        [3, 3, 3, 3, 3, 3],
-                        [6, 4, 2, null, 9, 9]
-                     ]
-            }, {
-                plugins: [
-                    ctMissingData({
-                      showMissingDataPoints: false
-                    })
-              ]
-            });
-        </source>
-        
         
         <script>
 
-            
             var data = {
                  labels: ['Week1', 'Week2', 'Week3', 'Week4', 'Week5', 'Week6'],
                     series: [

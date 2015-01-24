@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html>
+    <head>    
+        <title>missing-data Plugin</title>
+        <link rel="stylesheet" href="http://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
+        <script src="https://raw.githubusercontent.com/gionkunz/chartist-js/develop/dist/chartist.min.js"></script>
+        <script src="pluginMissingData.js"></script>
+    </head>
+    <body>
+        
+        <div id="ct-chart"></div>
+        
+        
+        <source>
+
+            var chart = new Chartist.Line('#ct-chart', {
+                 labels: ['Week1', 'Week2', 'Week3', 'Week4', 'Week5', 'Week6'],
+                    series: [
+                        [1, 2, 3, 4, 5, 6],
+                        [3, 3, 3, 3, 3, 3],
+                        [6, 4, 2, null, 9, 9]
+                     ]
+            }, {
+                plugins: [
+                    ctMissingData({
+                      showMissingDataPoints: false
+                    })
+              ]
+            });
+        </source>
+        
+        
+        <script>
+
+            
+            var data = {
+                 labels: ['Week1', 'Week2', 'Week3', 'Week4', 'Week5', 'Week6'],
+                    series: [
+                        [1, 2, 3, 4, 5, 6],
+                        [3, 3, 3, 3, 3, 3],
+                        [6, 4, 2, null, 9, 9]
+                     ]
+            };
+            var chart = new Chartist.Line('#ct-chart', data, {
+                plugins: [
+                    ctMissingData({
+                      showMissingDataPoints: false
+                    })
+              ]
+            });
+            
+           
+        
+        </script>
+    </body>
+</html>

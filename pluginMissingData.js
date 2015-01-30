@@ -1,3 +1,30 @@
+function parseSVGPath(code){
+
+}
+
+//parseSVGPath("M45,93C83.16666666666667,93,197.66666666666666,93,274,93C350.3333333333333,93,426.6666666666667,93,503,93C579.3333333333334,93,655.6666666666666,93,732,93C808.3333333333334,93,884.6666666666666,93,961,93C1037.3333333333333,93,1151.8333333333333,93,1190,93");
+                        
+/*
+M 45,93
+C
+83.16666666666667,
+93,
+197.66666666666666,
+93,
+274,
+93
+C
+350.3333333333333,
+93,
+426.6666666666667,
+93,
+503,
+93
+C579.3333333333334,93,655.6666666666666,93,732,93C808.3333333333334,93,884.6666666666666,93,961,93C1037.3333333333333,93,1151.8333333333333,93,1190,93
+*/
+
+
+
 ctMissingData = function (options) {
     return function ctMissingData(chart) {
 
@@ -34,9 +61,16 @@ ctMissingData = function (options) {
                         pointLineIndex++;
                     }
 
-                    if(missingData[pointLineIndex][data.index])
+                    // TODO store missingData in DOM to have access during resize 
+                    if(missingData && missingData[pointLineIndex][data.index])
                         data.element.remove();
-                }
+                    }
+                    
+                    if(data.type == "line"){
+                        
+                        //var svgCode = data.element._node.getAttribute("d");
+                    
+                    };
               });
             }
         }

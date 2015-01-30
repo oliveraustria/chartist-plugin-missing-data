@@ -9,7 +9,7 @@
     </head>
     <body>
         
-        <div id="ct-chart"></div>
+        <div class="ct-chart"></div>
         
         
         
@@ -23,7 +23,7 @@
                         [6, 4, 2, null, 9, 9]
                      ]
             };
-            var chart = new Chartist.Line('#ct-chart', data, {
+            var chart = new Chartist.Line('.ct-chart', data, {
                 plugins: [
                     ctMissingData({
                       showMissingDataPoints: false

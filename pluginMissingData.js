@@ -62,7 +62,7 @@ ctMissingData = function (options) {
                     }
 
                     // TODO store missingData in DOM to have access during resize 
-                    if(missingData && missingData[pointLineIndex][data.index])
+                    if(typeof(missingData) != "undefined" && missingData[pointLineIndex][data.index])
                         data.element.remove();
                     }
                     

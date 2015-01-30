@@ -11,6 +11,13 @@
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
+
+      
+    <link rel="stylesheet" href="http://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
+    <script src="https://raw.githubusercontent.com/gionkunz/chartist-js/develop/dist/chartist.min.js"></script>
+    <script src="https://raw.githubusercontent.com/oliveraustria/chartist-plugin-missing-data/master/pluginMissingData.js"></script>
+      
+      
   </head>
   <body>
     <div class="wrapper">
@@ -18,7 +25,8 @@
         <h1>Chartist plugin: missing-data</h1>
         <p></p>
 
-        <p class="view"><a href="https://github.com/oliveraustria/chartist-plugin-missing-data">View the Project on GitHub <small>oliveraustria/chartist-plugin-missing-data</small></a></p>
+        <p class="view">
+            <a href="https://github.com/oliveraustria/chartist-plugin-missing-data">View the Project on GitHub <small>oliveraustria/chartist-plugin-missing-data</small></a></p>
 
 
         <ul>
@@ -31,15 +39,58 @@
         <h3>
 <a id="chartist-plugin-missing-data" class="anchor" href="#chartist-plugin-missing-data" aria-hidden="true"><span class="octicon octicon-link"></span></a>Chartist Plugin: Missing Data</h3>
 
-<p>This page host the a plugin for the awesome chart library <a href="https://gionkunz.github.io/chartist-js/index.html">Chartist</a>, which handle a data set with missing data.</p>
+<p>This page hosts a plugin for the awesome chart library <a href="https://gionkunz.github.io/chartist-js/index.html">Chartist</a>, which handles a data set with missing data.</p>
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
+<pre><code>
+
+            var data = {
+                 labels: ['Week1', 'Week2', 'Week3', 'Week4', 'Week5', 'Week6'],
+                    series: [
+                        [1, 2, 3, 4, 5, 6],
+                        [3, 3, 3, 3, 3, 3],
+                        [6, 4, 2, null, 9, 9]
+                     ]
+            };
+            var chart = new Chartist.Line('#ct-chart', data, {
+                plugins: [
+                    ctMissingData({
+                      showMissingDataPoints: false
+                    })
+              ]
+            });
+
 </code></pre>
 
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
+<p></p>
 
+
+        <div id="ct-chart"></div>
+        
+        
+        
+        <script>
+            window.addEventListener("load", function(){
+                
+                var data = {
+                     labels: ['Week1', 'Week2', 'Week3', 'Week4', 'Week5', 'Week6'],
+                        series: [
+                            [1, 2, 3, 4, 5, 6],
+                            [3, 3, 3, 3, 3, 3],
+                            [6, 4, 2, null, 9, 9]
+                         ]
+                };
+                var chart = new Chartist.Line('#ct-chart', data, {
+                    plugins: [
+                        ctMissingData({
+                          showMissingDataPoints: false
+                        })
+                  ]
+                });
+            });
+                    
+          </script>
+          
+          <!--
 <h3>
 <a id="designer-templates" class="anchor" href="#designer-templates" aria-hidden="true"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
 
@@ -59,7 +110,10 @@ $ git checkout gh-pages
 <a id="support-or-contact" class="anchor" href="#support-or-contact" aria-hidden="true"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
 
 <p>Having trouble with Pages? Check out the documentation at <a href="https://help.github.com/pages">https://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
-      </section>
+
+-->
+
+      </section> 
       <footer>
         <p>This project is maintained by <a href="https://github.com/oliveraustria">oliveraustria</a></p>
         <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>

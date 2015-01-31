@@ -56,25 +56,25 @@ ctMissingData = function (options) {
                 // data points have to be removed
                 var pointLineIndex=-1;
                 chart.on('draw', function(data) {
-                if(data.type == "point"){
-                    if(data.index == 0){
-                        pointLineIndex++;
-                    }
+                    if(data.type == "point"){
+                        if(data.index == 0){
+                            pointLineIndex++;
+                        }
 
-                    // TODO store missingData in DOM to have access during resize 
-                    
-                    
-                    if(typeof(missingData) != "undefined"){
-                        if(missingData[pointLineIndex][data.index]){
-                            data.element.remove();
+                        // TODO store missingData in DOM to have access during resize 
+
+                        if(typeof(missingData) != "undefined"){
+                            if(missingData[pointLineIndex][data.index]){
+                                data.element.remove();
+                            }
                         }
                     }
-                    
+
                     if(data.type == "line"){
-                        
+
                         //var svgCode = data.element._node.getAttribute("d");
-                    
-                    };
+
+                    }
               });
             }
         }
